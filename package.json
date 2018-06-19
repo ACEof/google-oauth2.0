@@ -1,0 +1,24 @@
+{
+  "name": "OAuth",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexandr Kizilow",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.5",
+    "passport-google-oauth2": "^0.1.6",
+    "passport-oauth": "^1.0.0"
+  },
+  "devDependencies": {
+    "express-session": "^1.15.6",
+    "googleapis": "^32.0.0",
+    "hbs": "^4.0.1",
+    "passport": "^0.4.0"
+  }
+}
