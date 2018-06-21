@@ -3,12 +3,9 @@ const cookieSession = require('cookie-session')
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth2').Strategy
 const key = require('./keys')
-//const clientSecret = require('./keys')
 
 const app = express()
 const port = 3000
-//const clientID = keys.clientID
-//app.use(express.static('public'))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cookieSession({
@@ -22,7 +19,7 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000
   }
 }))
-//console.log(key.clientID);
+
 app.set('view engine', 'hbs')
 
 passport.serializeUser(function(user, done) {
@@ -33,8 +30,8 @@ passport.deserializeUser(function(user, done) {
 })
 
 passport.use(new GoogleStrategy({
-  clientID:  key.clientID,//'834511651692-1cl4uql6igdn8e7abtsm51c39bil4dmf.apps.googleusercontent.com',
-  clientSecret: key.clientSecret,//'Tymgiy3GsOKSLyQEOLrQe3Ff',
+  clientID:  key.clientID,
+  clientSecret: key.clientSecret,
   callbackURL: 'http://localhost:3000/auth/google/callback'
 },
 function(req, accessToken, refreshToken, profile, done) {
